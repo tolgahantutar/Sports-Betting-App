@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Focused state -->
+    <item android:state_focused="true">
+        <layer-list>
+            <!-- Transparent background -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" />
+                </shape>
+            </item>
+
+            <!-- Bottom line (focused) -->
+            <item android:gravity="bottom"
+                android:left="@dimen/space_medium"
+                android:right="@dimen/space_medium">
+                <shape android:shape="rectangle">
+                    <size android:height="1dp" />
+                    <solid android:color="@color/focused_underline_color" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Default (unfocused) state -->
+    <item>
+        <layer-list>
+            <!-- Transparent background -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" />
+                </shape>
+            </item>
+
+            <!-- Bottom line (unfocused) -->
+            <item android:gravity="bottom"
+                android:left="16dp"
+                android:right="16dp">
+                <shape android:shape="rectangle">
+                    <size android:height="1dp" />
+                    <solid android:color="@color/unfocused_underline_color" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

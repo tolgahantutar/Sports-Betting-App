@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayout.FloatingHintBold" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="Widget.SportsBetApp.DefaultInputLayoutStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/space_small</item>
+        <item name="android:layout_marginEnd">@dimen/space_small</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textColorHint">@color/floating_hint_selector</item>
+        <item name="hintTextColor">@color/floating_hint_selector</item>
+        <item name="hintTextAppearance">@style/TextInputLayout.FloatingHintBold</item>
+    </style>
+
+</resources>

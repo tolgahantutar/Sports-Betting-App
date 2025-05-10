@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="viewBackgroundColor">@color/whiteColor</color>
+    <color name="toolbarTitleTextColor">@color/blackColor</color>
+    <color name="backButtonColor">@color/greenColor</color>
+    <color name="focusedHintTextColor">@color/greenColor</color>
+    <color name="editTextDefaultTextColor">@color/blackColor</color>
+    <color name="defaultHintTextColor">@android:color/darker_gray</color>
+    <color name="focused_underline_color">@color/greenColor</color>
+    <color name="unfocused_underline_color">@color/lighter_gray</color>
+    <color name="btnBackgroundColor">@color/greenColor</color>
+    <color name="textBtnColor">@color/greenColor</color>
+    <color name="inputErrorColor">@color/red</color>
+    <color name="btnDisabledBackgroundColor">@android:color/darker_gray</color>
+</resources>

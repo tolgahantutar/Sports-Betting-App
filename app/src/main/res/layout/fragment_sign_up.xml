@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.auth.SignUpFragment"
+    android:background="@color/viewBackgroundColor">
+
+    <com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout
+        android:id="@+id/tilName"
+        style="@style/Widget.SportsBetApp.DefaultInputLayoutStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tilSurname"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/space_medium"
+        app:errorEnabled="false"
+        app:boxBackgroundMode="none"
+        android:hint="@string/name">
+
+        <com.tutar.sportsbetapp.presentation.ui.components.DefaultEditText
+            android:id="@+id/tieName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_small"/>
+
+    </com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout>
+
+    <com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout
+        android:id="@+id/tilSurname"
+        style="@style/Widget.SportsBetApp.DefaultInputLayoutStyle"
+        app:layout_constraintStart_toEndOf="@id/tilName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/space_medium"
+        app:errorEnabled="false"
+        app:boxBackgroundMode="none"
+        android:hint="@string/surname">
+
+        <com.tutar.sportsbetapp.presentation.ui.components.DefaultEditText
+            android:id="@+id/tieSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_small"/>
+
+    </com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout>
+
+    <com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout
+        android:id="@+id/tilEmail"
+        style="@style/Widget.SportsBetApp.DefaultInputLayoutStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilSurname"
+        android:layout_marginTop="@dimen/space_medium"
+        app:errorEnabled="false"
+        app:boxBackgroundMode="none"
+        android:hint="@string/e_mail_address">
+
+        <com.tutar.sportsbetapp.presentation.ui.components.DefaultEditText
+            android:id="@+id/tieEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_small"/>
+    </com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout>
+
+    <com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/Widget.SportsBetApp.DefaultInputLayoutStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilEmail"
+        android:layout_marginHorizontal="@dimen/space_small"
+        android:layout_marginTop="@dimen/space_medium"
+        app:errorEnabled="false"
+        app:boxBackgroundMode="none"
+        android:hint="@string/password">
+
+        <com.tutar.sportsbetapp.presentation.ui.components.DefaultEditText
+            android:id="@+id/tiePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_small"/>
+
+    </com.tutar.sportsbetapp.presentation.ui.components.DefaultTextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPassword"
+        android:layout_marginTop="@dimen/space_xxmedium"
+        android:layout_marginHorizontal="@dimen/space_medium"
+        android:text="@string/sign_up"
+        android:textColor="@color/btn_text_selector"
+        android:paddingVertical="@dimen/space_medium"
+        android:backgroundTint="@color/btn_background_selector"
+        android:enabled="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

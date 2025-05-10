@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sports Bet App</string>
+    <string name="login">Login</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="e_mail_address">E-mail address</string>
+    <string name="password">Password</string>
+    <string name="become_member_now">BECOME MEMBER NOW</string>
+    <string name="not_a_member">If you are not a member of %1s yet.</string>
+    <string name="please_do_not_leave_empty">Please do not leave empty.</string>
+    <string name="please_enter_valid_e_mail">Please enter valid e-mail.</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+</resources>
