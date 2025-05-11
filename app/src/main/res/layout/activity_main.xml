@@ -5,6 +5,124 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/viewBackgroundColor"
     tools:context=".presentation.ui.main.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarBackgroundColor"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/coloredToolbarTextColor"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold|italic" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainNavHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="@dimen/space_non"
+        android:layout_height="@dimen/space_non"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/clBottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
+        app:navGraph="@navigation/main_nav_graph" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="@dimen/space_ten">
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_24"
+            app:layout_constraintEnd_toEndOf="@id/tvHome"
+            app:layout_constraintStart_toStartOf="@id/tvHome"
+            app:layout_constraintBottom_toTopOf="@id/tvHome"/>
+
+        <TextView
+            android:id="@+id/tvHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_xxmedium"
+            android:text="@string/main_page"
+            android:textSize="@dimen/font_ten"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile_24"
+            app:layout_constraintEnd_toEndOf="@id/tvProfile"
+            app:layout_constraintStart_toStartOf="@id/tvProfile"
+            app:layout_constraintBottom_toTopOf="@id/tvProfile"/>
+
+        <TextView
+            android:id="@+id/tvProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_xxmedium"
+            android:text="@string/profile"
+            android:textSize="@dimen/font_ten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/greenColor"
+        app:layout_constraintBottom_toTopOf="@id/clBottomNav" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBetBasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/clBottomNav"
+        android:background="@drawable/circle_bg"
+        android:padding="@dimen/space_medium">
+
+        <TextView
+            android:id="@+id/tvTotalGames"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3 maç"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/betBasketTextColor"/>
+
+        <TextView
+            android:id="@+id/tvTotalOdds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0,00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalGames"
+            android:textColor="@color/betBasketTextColor"
+            android:textStyle="bold"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

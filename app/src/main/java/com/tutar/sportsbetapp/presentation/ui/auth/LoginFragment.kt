@@ -1,6 +1,7 @@
 package com.tutar.sportsbetapp.presentation.ui.auth
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -20,6 +21,7 @@ import com.tutar.sportsbetapp.R
 import com.tutar.sportsbetapp.core.util.Resource
 import com.tutar.sportsbetapp.databinding.FragmentLoginBinding
 import com.tutar.sportsbetapp.presentation.extensions.createProgressDialog
+import com.tutar.sportsbetapp.presentation.ui.main.MainActivity
 import com.tutar.sportsbetapp.presentation.viewModel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -115,9 +117,10 @@ class LoginFragment : Fragment() {
                         }
                         is Resource.Success -> {
                             blockingProgress?.dismiss()
-                            Toast.makeText(requireContext(), "Logged in successfully", Toast.LENGTH_SHORT).show()
+                            navigateToMainActivity()
                         }
                         is Resource.Error -> {
+                            blockingProgress?.dismiss()
                             Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                         }
                         else -> {
@@ -129,7 +132,9 @@ class LoginFragment : Fragment() {
         }
     }
 
-    companion object {
-        fun newInstance() = LoginFragment()
+    private fun navigateToMainActivity() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
 }

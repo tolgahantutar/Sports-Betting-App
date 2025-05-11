@@ -12,4 +12,6 @@
     <string name="please_enter_valid_e_mail">Please enter valid e-mail.</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
+    <string name="main_page">Main Page</string>
+    <string name="profile">Profile</string>
 </resources>

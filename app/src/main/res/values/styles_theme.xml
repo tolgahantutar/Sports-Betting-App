@@ -2,7 +2,7 @@
 <resources>
     <style name="TextInputLayout.FloatingHintBold" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textSize">@dimen/font_xsmall</item>
     </style>
 
     <style name="Widget.SportsBetApp.DefaultInputLayoutStyle" parent="TextAppearance.MaterialComponents.Body1">

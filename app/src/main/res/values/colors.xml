@@ -12,4 +12,9 @@
     <color name="textBtnColor">@color/greenColor</color>
     <color name="inputErrorColor">@color/red</color>
     <color name="btnDisabledBackgroundColor">@android:color/darker_gray</color>
+    <color name="toolbarBackgroundColor">@color/greenColor</color>
+    <color name="coloredToolbarTextColor">@color/whiteColor</color>
+    <color name="betBasketBackgroundColor">@color/greenColor</color>
+    <color name="betBasketTextColor">@color/whiteColor</color>
+    <color name="leagueNameBackgroundColor">@color/darkerBlue</color>
 </resources>
