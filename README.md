@@ -70,10 +70,21 @@ Replace `"YOUR_API_KEY"` inside `OddsRemoteDataSource.kt` with your actual key f
 
 ```kotlin
 apiService.getOddsForSport(sport, apiKey = "YOUR_API_KEY")
+```
+
+
 
 ## 📸 Screenshots
 
-You can add screenshots here if available to showcase the UI and features of the app.
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/190b03dc-9b1d-45fa-99c7-343bf82f3e91" /> 
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/afdaaf18-5bc0-41e2-a425-ef6408e3ffdf" />
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/59fffaef-9c35-48ce-9d37-b17abab3b000" />
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/945aaccb-7a7b-4ede-b1c8-bee2c89f79d4" />
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/4017dbf9-bf46-4d8b-9ee2-cd412f6d844a" />
+
+
+
+
 
 ---
 
