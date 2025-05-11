@@ -17,4 +17,5 @@
     <color name="betBasketBackgroundColor">@color/greenColor</color>
     <color name="betBasketTextColor">@color/whiteColor</color>
     <color name="leagueNameBackgroundColor">@color/darkerBlue</color>
+    <color name="selectedOddColor">@color/yellow</color>
 </resources>

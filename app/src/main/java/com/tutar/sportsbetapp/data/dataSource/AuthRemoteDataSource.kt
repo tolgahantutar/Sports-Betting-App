@@ -15,4 +15,12 @@ class AuthRemoteDataSource @Inject constructor(
     suspend fun signUp(email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).await()
     }
+
+    suspend fun signOut() {
+        firebaseAuth.signOut()
+    }
+
+    fun isUserLoggedIn(): Boolean {
+        return firebaseAuth.currentUser != null
+    }
 }

@@ -8,6 +8,6 @@ class OddsRemoteDataSource @Inject constructor(
     private val apiService: OddsApiService
 ) {
     suspend fun getOddsForSport(sport: String): List<OddsResponse> {
-        return apiService.getOddsForSport(sport, apiKey = "4d00fbc80128754cacb2afaaf6e23e30")
+        return apiService.getOddsForSport(sport, apiKey = "YOUR_API_KEY")
     }
 }

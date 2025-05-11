@@ -2,11 +2,10 @@
     android:id="@+id/eventInfoAndOddsContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whiteColor">
 
     <TextView
         android:id="@+id/tvGameName"
@@ -15,8 +14,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/space_small"
-        android:textSize="@dimen/space_medium"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/font_xsmall"
+        android:textStyle="bold"
         tools:text="Fenerbahçe - Galatasaray"
         android:textColor="@color/editTextDefaultTextColor"/>
 
@@ -37,6 +37,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGameName"
-        android:gravity="start">
+        android:layout_marginTop="@dimen/space_small"
+        android:divider="@drawable/horizontal_space_4dp"
+        android:showDividers="middle"
+        android:gravity="center">
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oddsContainer"
+        android:background="@color/blackColor"
+        android:layout_marginTop="@dimen/space_medium"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

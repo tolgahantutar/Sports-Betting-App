@@ -13,4 +13,8 @@
     <string name="surname">Soyad</string>
     <string name="main_page">Ana Sayfa</string>
     <string name="profile">Profil</string>
+    <string name="bet_amount">Kupon Bedeli</string>
+    <string name="maximum_win">Maks. Kazanç</string>
+    <string name="total_odds">Toplam Oran</string>
+    <string name="log_out">Çıkış</string>
 </resources>

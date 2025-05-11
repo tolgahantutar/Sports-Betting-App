@@ -29,7 +29,8 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
     private val authViewmodel: AuthViewModel by viewModels()
     private var blockingProgress: Dialog? = null
 
@@ -38,7 +39,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -49,7 +50,6 @@ class LoginFragment : Fragment() {
             val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
             val imeHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
 
-            // Apply translation to bring TextViews above keyboard
             binding.tvBecomeMemberNow.translationY = if (imeVisible) -imeHeight.toFloat() else 0f
             binding.tvNotMemberYet.translationY = if (imeVisible) -imeHeight.toFloat() else 0f
 
@@ -136,5 +136,10 @@ class LoginFragment : Fragment() {
         val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)
         requireActivity().finish()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -1,21 +1,30 @@
 package com.tutar.sportsbetapp.presentation.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.tutar.sportsbetapp.R
 import com.tutar.sportsbetapp.databinding.ActivityAuthBinding
+import com.tutar.sportsbetapp.presentation.ui.main.MainActivity
+import com.tutar.sportsbetapp.presentation.viewModel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
 
     private lateinit var navController: NavController
+    private val viewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +34,8 @@ class AuthActivity : AppCompatActivity() {
         applyEdgeToEdgeInsets()
         setSupportActionBar(binding.customToolbar)
         setupNavigation()
+        initObservables()
+        viewModel.checkLoginStatus()
     }
 
     private fun applyEdgeToEdgeInsets() {
@@ -57,6 +68,19 @@ class AuthActivity : AppCompatActivity() {
                     supportActionBar?.setDisplayShowTitleEnabled(false)
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                     binding.tvToolbarTitle.text = getString(R.string.sign_up)
+                }
+            }
+        }
+    }
+
+    private fun initObservables() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isLoggedIn.collect { isLoggedIn ->
+                    if (isLoggedIn == true) {
+                        startActivity(Intent(this@AuthActivity, MainActivity::class.java))
+                        finish()
+                    }
                 }
             }
         }

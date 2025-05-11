@@ -17,18 +17,20 @@ class MainViewModel @Inject constructor(
     private val getOddsUseCase: GetOddsUseCase
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow<Resource<List<EventListItem>>>(Resource.Loading)
-    val uiState: StateFlow<Resource<List<EventListItem>>> = _uiState
+    private val _uiState = MutableStateFlow<Resource<List<EventListItem>>?>(null)
+    val uiState: StateFlow<Resource<List<EventListItem>>?> = _uiState
 
     fun fetchOdds() {
         viewModelScope.launch {
-            _uiState.value = Resource.Loading
-            _uiState.value = try {
-                val odds = getOddsUseCase()
-                val grouped = groupEventsByLeague(odds)
-                Resource.Success(grouped)
-            } catch (e: Exception) {
-                Resource.Error("Failed to fetch odds: ${e.message}")
+            getOddsUseCase().collect { result ->
+                _uiState.value = when (result) {
+                    is Resource.Success -> {
+                        val grouped = groupEventsByLeague(result.data)
+                        Resource.Success(grouped)
+                    }
+                    is Resource.Loading -> Resource.Loading
+                    is Resource.Error -> Resource.Error(result.message)
+                }
             }
         }
     }

@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.tutar.sportsbetapp.R
 import com.tutar.sportsbetapp.core.util.Resource
 import com.tutar.sportsbetapp.databinding.FragmentSignUpBinding
@@ -24,7 +25,8 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
 
-    private lateinit var binding: FragmentSignUpBinding
+    private var _binding: FragmentSignUpBinding? = null
+    private val binding get() = _binding!!
     private val authViewModel: AuthViewModel by viewModels()
     private var blockingProgress: Dialog? = null
 
@@ -33,7 +35,7 @@ class SignUpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -91,7 +93,8 @@ class SignUpFragment : Fragment() {
                         }
                         is Resource.Success -> {
                             blockingProgress?.dismiss()
-                            Toast.makeText(requireContext(), "Logged in successfully", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Signed in successfully", Toast.LENGTH_SHORT).show()
+                            findNavController().popBackStack()
                         }
                         is Resource.Error -> {
                             blockingProgress?.dismiss()
@@ -117,6 +120,11 @@ class SignUpFragment : Fragment() {
         }
 
         return !hasError
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -31,6 +31,7 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-auth = {group = "com.google.firebase", name = "firebase-auth" }
+firebase-analytics = {group = "com.google.firebase", name = "firebase-analytics"}
 retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
 gson = "com.google.code.gson:gson:2.11.0"
 retrofit-gson = "com.squareup.retrofit2:converter-gson:2.11.0"

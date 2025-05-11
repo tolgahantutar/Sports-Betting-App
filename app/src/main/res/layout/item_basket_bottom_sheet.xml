@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvEventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Fenerbahçe - Galatasaray"
+        android:layout_margin="@dimen/space_small"/>
+
+    <ImageView
+        android:id="@+id/ivDeleteEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvEventName"
+        app:layout_constraintBottom_toBottomOf="@id/tvEventName"
+        android:src="@drawable/delete_24dp"
+        android:layout_marginEnd="@dimen/space_small"/>
+
+    <TextView
+        android:id="@+id/tvOddName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvEventName"
+        app:layout_constraintTop_toBottomOf="@id/tvEventName"
+        tools:text="MS 1"
+        android:layout_marginTop="@dimen/space_small"
+        android:padding="@dimen/space_small"
+        android:background="@color/lighter_gray"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvOddName"
+        app:layout_constraintTop_toTopOf="@id/tvOddName"
+        android:padding="@dimen/space_small"
+        tools:text="2.26"
+        android:textStyle="bold"
+        android:background="@color/selectedOddColor"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blackColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:layout_marginTop="@dimen/space_small"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

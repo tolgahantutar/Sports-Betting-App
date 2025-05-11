@@ -29,4 +29,8 @@ class AuthUseCase @Inject constructor(
             emit(Resource.Error(e.message))
         }
     }
+
+    fun checkIsUserLoggedIn(): Boolean {
+        return repository.isUserLoggedIn()
+    }
 }

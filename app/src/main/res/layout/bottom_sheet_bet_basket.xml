@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/viewBackgroundColor">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarBackgroundColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleTextAppearance="@style/ToolbarTitleStyle">
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBetBasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/clBasketOddsAndPriceContainer"
+        android:layout_marginTop="@dimen/space_medium"
+        android:layout_marginStart="@dimen/space_small"
+        app:layout_constraintVertical_bias="0"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBasketOddsAndPriceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvBetBasket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/blackColor"
+        android:paddingBottom="@dimen/space_medium"
+        app:layout_constraintVertical_bias="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOddPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/box_stroke_selector"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:errorEnabled="false"
+            android:hint="@string/bet_amount"
+            android:textColor="@color/whiteColor"
+            app:hintTextColor="@color/whiteColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/space_medium"
+            android:layout_marginHorizontal="@dimen/space_small"
+            app:hintTextAppearance="@style/WhiteHintTextAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieOddPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/whiteColor"
+                android:textColorHint="@color/whiteColor"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tvTotalOddsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilOddPrice"
+            android:text="@string/total_odds"
+            android:layout_marginTop="@dimen/space_medium"
+            android:textColor="@color/whiteColor"
+            android:layout_marginStart="@dimen/space_medium"
+            android:textSize="@dimen/font_small"/>
+
+        <TextView
+            android:id="@+id/tvTotalOddsValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilOddPrice"
+            tools:text="405.89"
+            android:layout_marginTop="@dimen/space_medium"
+            android:textColor="@color/whiteColor"
+            android:layout_marginStart="@dimen/space_medium"
+            android:textSize="@dimen/font_small"/>
+
+        <TextView
+            android:id="@+id/tvMaxWinTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalOddsTitle"
+            android:text="@string/maximum_win"
+            android:layout_marginTop="@dimen/space_medium"
+            android:textColor="@color/whiteColor"
+            android:layout_marginStart="@dimen/space_medium"
+            android:textSize="@dimen/font_small"/>
+
+        <TextView
+            android:id="@+id/tvMaxWinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalOddsValue"
+            tools:text="26.236,67"
+            android:layout_marginTop="@dimen/space_medium"
+            android:textColor="@color/whiteColor"
+            android:layout_marginStart="@dimen/space_medium"
+            android:textSize="@dimen/font_small"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,4 +18,20 @@
         <item name="hintTextAppearance">@style/TextInputLayout.FloatingHintBold</item>
     </style>
 
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/coloredToolbarTextColor</item> <!-- or use @color/your_color -->
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">@dimen/font_large</item> <!-- or @dimen/font_large -->
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#fff</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <style name="WhiteHintTextAppearance" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/hint_text_color_selector</item>
+    </style>
+
+
 </resources>

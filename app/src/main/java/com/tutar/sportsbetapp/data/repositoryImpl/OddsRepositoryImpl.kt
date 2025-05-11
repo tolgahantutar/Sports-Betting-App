@@ -19,7 +19,7 @@ class OddsRepositoryImpl @Inject constructor(
                     try {
                         remoteDataSource.getOddsForSport(sport)
                     } catch (e: Exception) {
-                        emptyList<OddsResponse>()
+                        emptyList()
                     }
                 }
             }.awaitAll().flatten()

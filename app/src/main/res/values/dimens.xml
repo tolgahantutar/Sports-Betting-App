@@ -8,6 +8,7 @@
     <dimen name="font_ten">10sp</dimen>
 
     <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_xmedium">24dp</dimen>
     <dimen name="space_xxmedium">32dp</dimen>
     <dimen name="space_xxxxlarge">80dp</dimen>
     <dimen name="space_small">8dp</dimen>

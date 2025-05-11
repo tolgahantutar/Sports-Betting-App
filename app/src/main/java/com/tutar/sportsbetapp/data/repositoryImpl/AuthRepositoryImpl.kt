@@ -15,4 +15,12 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun signUp(email: String, password: String) {
         remoteDataSource.signUp(email, password)
     }
+
+    override suspend fun signOut() {
+        remoteDataSource.signOut()
+    }
+
+    override fun isUserLoggedIn(): Boolean {
+        return remoteDataSource.isUserLoggedIn()
+    }
 }

@@ -14,4 +14,8 @@
     <string name="surname">Surname</string>
     <string name="main_page">Main Page</string>
     <string name="profile">Profile</string>
+    <string name="bet_amount">Bet Amount</string>
+    <string name="maximum_win">Maximum Win</string>
+    <string name="total_odds">Total Odds</string>
+    <string name="log_out">Logout</string>
 </resources>

@@ -20,5 +20,7 @@ data class OddsResponse(
     @SerializedName("away_team")
     val awayTeam: String?,
     @SerializedName("bookmakers")
-    val bookmakers: List<BookMakers>?
+    val bookmakers: List<BookMakers>?,
+    var selectedOddName: String?,
+    var isExpanded: Boolean = false
 ): Parcelable
